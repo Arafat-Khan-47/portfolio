@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Md. Arafat - CSE Graduate & Instructor</title>
+    <title>Md. Arafat - Computer Science Graduate & Researcher</title>
     <style>
         * {
             margin: 0;
@@ -235,14 +235,16 @@
             width: 250px;
             height: 250px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 6rem;
-            color: white;
             margin: 0 auto;
             box-shadow: 0 10px 40px rgba(37, 99, 235, 0.3);
+            overflow: hidden;
+            border: 5px solid white;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .about-text h3 {
@@ -284,6 +286,30 @@
         .stat-label {
             color: var(--text);
             margin-top: 0.5rem;
+        }
+
+        /* Research Section */
+        .research-highlight {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 3rem;
+            border-radius: 15px;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 40px rgba(37, 99, 235, 0.3);
+        }
+
+        .research-highlight h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .award-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            margin-top: 1rem;
+            font-weight: 600;
         }
 
         /* Education Section */
@@ -415,6 +441,49 @@
             content: '✓';
             color: var(--primary);
             font-weight: bold;
+        }
+
+        /* Achievements Section */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .achievement-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--primary);
+            transition: transform 0.3s;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .achievement-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .achievement-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .achievement-card ul li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .achievement-card ul li::before {
+            content: '🏆';
+            position: absolute;
+            left: 0;
         }
 
         /* Experience Section */
@@ -740,10 +809,12 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#research">Research</a></li>
                 <li><a href="#education">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
+                <li><a href="#achievements">Achievements</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -753,11 +824,11 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <h1>Md. Arafat</h1>
-            <h2>CSE Graduate & Instructor</h2>
-            <p>Computer Science graduate with a strong academic record (CGPA 3.81) and over 6 years of experience in private tutoring. Specializing in Computer Science, Mathematics, and ICT with proven expertise in programming, IoT, and Android development.</p>
+            <h2>Computer Science Graduate | Aspiring Lecturer | Research Enthusiast</h2>
+            <p>Research-oriented CSE graduate with exceptional academic record (CGPA 3.84/4.00, 2nd position overall). Passionate about teaching, research in AI-driven medical image analysis, explainable AI, computer vision, and intelligent healthcare systems. Published researcher with Best Paper & Best Presenter Award.</p>
             <div class="cta-buttons">
                 <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                <a href="#projects" class="btn btn-secondary">View My Work</a>
+                <a href="#research" class="btn btn-secondary">View Research</a>
             </div>
         </div>
     </section>
@@ -766,26 +837,65 @@
     <section id="about">
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
-            <div class="about-image">👨‍💻</div>
+            <div class="about-image">
+                <img src="profile.jpg" alt="Md. Arafat">
+            </div>
             <div class="about-text">
-                <h3>Passionate Educator & Developer</h3>
-                <p>Enthusiastic, dedicated, and detail-oriented Computer Science graduate seeking to leverage a strong foundation in computer science to contribute to innovative projects. I have a proven track record in teaching and simplifying complex technical concepts for students.</p>
-                <p>With expertise in multiple programming languages and a deep understanding of IoT and Android development, I bring both theoretical knowledge and practical experience to every project I undertake.</p>
+                <h3>Research-Oriented Educator & Developer</h3>
+                <p>Enthusiastic, dedicated, and research-oriented Computer Science graduate with solid foundations in Programming, Algorithms, Networking, Database Systems, IoT, and Embedded Technologies. Currently pursuing M.Sc. in Computer Science & Engineering at DUET.</p>
+                <p>Research interests include medical image analysis using deep learning, explainable AI (XAI), computer vision, and intelligent healthcare systems. With over 8 years of tutoring experience, I am passionate about fostering analytical thinking and promoting hands-on learning.</p>
                 <div class="stats">
                     <div class="stat-card">
-                        <div class="stat-number">3.81</div>
-                        <div class="stat-label">CGPA</div>
+                        <div class="stat-number">3.84</div>
+                        <div class="stat-label">CGPA (2nd Overall)</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">Students Taught</div>
+                        <div class="stat-number">8+</div>
+                        <div class="stat-label">Years Teaching</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">6+</div>
-                        <div class="stat-label">Years Experience</div>
+                        <div class="stat-number">1</div>
+                        <div class="stat-label">Published Paper</div>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research">
+        <h2 class="section-title">Research Publication</h2>
+        <div class="research-highlight">
+            <h3>An Efficient Inception-V3 Based Customized Transfer Learning Model for MRI Brain Tumor Classification</h3>
+            <p><strong>Md. Arafat</strong> (2025)</p>
+            <p>Published in: 1st International Conference on Science and Humanities for Sustainable Development (ICSHSD-2025), Dhaka University of Engineering & Technology (DUET), Gazipur</p>
+            <div class="award-badge">🏆 Best Paper Award</div>
+            <div class="award-badge">🎤 Best Presenter Award</div>
+        </div>
+        <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+            <h3 style="color: var(--primary); margin-bottom: 1rem;">Research Interests</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                    <span style="position: absolute; left: 0; color: var(--primary);">▸</span>
+                    Medical Image Analysis using Deep Learning
+                </li>
+                <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                    <span style="position: absolute; left: 0; color: var(--primary);">▸</span>
+                    Explainable AI (XAI) and Interpretability
+                </li>
+                <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                    <span style="position: absolute; left: 0; color: var(--primary);">▸</span>
+                    Computer Vision and Image Processing
+                </li>
+                <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                    <span style="position: absolute; left: 0; color: var(--primary);">▸</span>
+                    Intelligent Healthcare Systems
+                </li>
+                <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                    <span style="position: absolute; left: 0; color: var(--primary);">▸</span>
+                    AI-Driven Applications and Smart Technologies
+                </li>
+            </ul>
         </div>
     </section>
 
@@ -795,11 +905,20 @@
         <div class="timeline">
             <div class="timeline-item">
                 <div class="timeline-content">
-                    <h3>BSc in Computer Science & Engineering</h3>
+                    <h3>M.Sc. in Computer Science & Engineering</h3>
+                    <div class="institution">Dhaka University of Engineering & Technology (DUET)</div>
+                    <div class="date">Running</div>
+                    <p>Continuing advanced studies in computer science with focus on research and innovation in AI and machine learning applications.</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>B.Sc. in Computer Science & Engineering</h3>
                     <div class="institution">Dhaka University of Engineering & Technology (DUET)</div>
                     <div class="date">November 2021 - October 2025</div>
-                    <div class="cgpa">Current CGPA: 3.81/4.00</div>
-                    <p>Specialized in software development, algorithms, and emerging technologies. Recipient of Dean's Award in 2023 and 2024 for meritorious results.</p>
+                    <div class="cgpa">CGPA: 3.84/4.00 | 2nd Position Overall</div>
+                    <p>Dean's Award recipient (2022-2024) for meritorious results. Specialized in AI, machine learning, algorithms, and software development.</p>
                 </div>
                 <div class="timeline-dot"></div>
             </div>
@@ -807,9 +926,9 @@
                 <div class="timeline-content">
                     <h3>Diploma in Computer Technology</h3>
                     <div class="institution">Barisal Polytechnic Institute</div>
-                    <div class="date">October 2016 - March 2021</div>
+                    <div class="date">August 2016 - March 2021</div>
                     <div class="cgpa">CGPA: 3.80/4.00</div>
-                    <p>4-year comprehensive program focused on computer fundamentals, programming, and practical applications. Gained strong foundation in hardware and software.</p>
+                    <p>4-year comprehensive program. Strong foundation in computer fundamentals, programming, and practical applications.</p>
                 </div>
                 <div class="timeline-dot"></div>
             </div>
@@ -817,7 +936,7 @@
                 <div class="timeline-content">
                     <h3>Secondary School Certificate (SSC)</h3>
                     <div class="institution">Amirabad Secondary School</div>
-                    <div class="date">Completed</div>
+                    <div class="date">2016</div>
                     <div class="cgpa">GPA: 4.78/5.00</div>
                     <p>Excelled in science and mathematics, laying the groundwork for future studies in computer science and engineering.</p>
                 </div>
@@ -826,17 +945,205 @@
         </div>
     </section>
 
+    <!-- Achievements Section -->
+    <section id="achievements">
+        <h2 class="section-title">Achievements & Honors</h2>
+        <div class="achievements-grid">
+            <div class="achievement-card">
+                <h3>Academic Excellence</h3>
+                <ul>
+                    <li>Dean's Award (2022-2024) for meritorious results</li>
+                    <li>2nd Position overall in B.Sc. in CSE (CGPA 3.84/4.00)</li>
+                </ul>
+            </div>
+            <div class="achievement-card">
+                <h3>Research Recognition</h3>
+                <ul>
+                    <li>Best Paper Award at ICSHSD-2025 (DUET)</li>
+                    <li>Best Presenter Award at ICSHSD-2025 (DUET)</li>
+                </ul>
+            </div>
+            <div class="achievement-card">
+                <h3>Competitive Programming & Olympiads</h3>
+                <ul>
+                    <li>2nd Prize - DUET CSE ICT Olympiad 2023</li>
+                    <li>4th Prize - DUET IUPC ICT Olympiad 2025</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section id="leadership" style="background: var(--light);">
+        <h2 class="section-title">Professional & Leadership Experience</h2>
+        <div class="experience-grid">
+            <div class="experience-card">
+                <h3>Research & Innovation Secretary</h3>
+                <div class="company">DUET Computer Society, DUET Gazipur</div>
+                <div class="period">2024 - 2025</div>
+                <ul>
+                    <li>Organized and supervised research workshops, seminars, and innovation challenges</li>
+                    <li>Encouraged student participation in research and publication</li>
+                    <li>Led initiatives to promote research culture among students</li>
+                </ul>
+            </div>
+            <div class="experience-card">
+                <h3>Vice President</h3>
+                <div class="company">Chandradip, Barisal Divisional Students' Welfare Association, DUET</div>
+                <div class="period">2024 - 2025</div>
+                <ul>
+                    <li>Oversaw initiatives for student skill development and community engagement</li>
+                    <li>Coordinated welfare programs and student support activities</li>
+                </ul>
+            </div>
+            <div class="experience-card">
+                <h3>Library Secretary</h3>
+                <div class="company">Chandradip, Barisal Divisional Students' Welfare Association, DUET</div>
+                <div class="period">2023 - 2024</div>
+                <ul>
+                    <li>Coordinated acquisition and cataloging of academic books and research materials</li>
+                    <li>Managed library resources and student access systems</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2 class="section-title">Teaching & Professional Experience</h2>
+        <div class="experience-grid">
+            <div class="experience-card" style="border-left: 4px solid #10b981;">
+                <h3>Teaching & Mentoring</h3>
+                <div class="company">Private Tutoring</div>
+                <div class="period">Over 8 Years</div>
+                <ul>
+                    <li>Taught secondary, higher secondary, and diploma-level students</li>
+                    <li>Specialized in Computer Science, Mathematics, and Physics</li>
+                    <li>Guided learners through analytical thinking and problem-solving methodologies</li>
+                    <li>Developed comprehensive lesson plans and teaching materials</li>
+                </ul>
+            </div>
+            <div class="experience-card">
+                <h3>SOC Analyst Intern</h3>
+                <div class="company">Byte Care Limited</div>
+                <div class="period">March 2025</div>
+                <ul>
+                    <li>Completed 4-week intensive internship analyzing security events</li>
+                    <li>Prepared detailed incident reports and security assessments</li>
+                    <li>Gained hands-on experience in digital forensics and threat monitoring</li>
+                </ul>
+            </div>
+            <div class="experience-card">
+                <h3>Android Development Intern</h3>
+                <div class="company">BDtask Academy</div>
+                <div class="period">January 2020 - March 2020</div>
+                <ul>
+                    <li>Developed Android applications using Java and XML for e-learning modules</li>
+                    <li>Built and tested application features and user interfaces</li>
+                    <li>Collaborated with development team on project implementation</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" style="background: var(--light);">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Brain Tumor Classification</h3>
+                </div>
+                <div class="project-body">
+                    <p>Developed deep learning models for automated MRI brain tumor detection using advanced transfer learning techniques with Inception-V3 architecture.</p>
+                    <div class="project-tags">
+                        <span class="tag">Deep Learning</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">TensorFlow</span>
+                        <span class="tag">Medical AI</span>
+                        <span class="tag">Research</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Government Notify Service</h3>
+                </div>
+                <div class="project-body">
+                    <p>Designed and developed E-Help System mobile app for civic issue reporting and management with real-time database integration.</p>
+                    <div class="project-tags">
+                        <span class="tag">Android</span>
+                        <span class="tag">Firebase</span>
+                        <span class="tag">Java</span>
+                        <span class="tag">XML</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>IoT Smart Home Prototype</h3>
+                </div>
+                <div class="project-body">
+                    <p>Created a sensor-integrated home automation system with remote monitoring and control capabilities using IoT technologies.</p>
+                    <div class="project-tags">
+                        <span class="tag">IoT</span>
+                        <span class="tag">Arduino</span>
+                        <span class="tag">Sensors</span>
+                        <span class="tag">Automation</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Automated War Vehicle</h3>
+                </div>
+                <div class="project-body">
+                    <p>Designed autonomous vehicle prototype with object detection and obstacle avoidance using microcontrollers and computer vision.</p>
+                    <div class="project-tags">
+                        <span class="tag">Robotics</span>
+                        <span class="tag">Computer Vision</span>
+                        <span class="tag">Microcontrollers</span>
+                        <span class="tag">Automation</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>To-Let Management System</h3>
+                </div>
+                <div class="project-body">
+                    <p>Built a responsive web application for property listings and management with comprehensive search and filtering features.</p>
+                    <div class="project-tags">
+                        <span class="tag">PHP</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Web Development</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Skills Section -->
     <section id="skills">
-        <h2 class="section-title">Skills & Expertise</h2>
+        <h2 class="section-title">Technical Skills</h2>
         <div class="skills-grid">
             <div class="skill-category">
                 <h3>Programming Languages</h3>
                 <ul class="skill-list">
-                    <li>Java</li>
+                    <li>C & C++</li>
                     <li>Python</li>
-                    <li>C/C++</li>
-                    <li>Android Development</li>
+                    <li>Java</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Web Technologies</h3>
+                <ul class="skill-list">
+                    <li>HTML & CSS</li>
+                    <li>JavaScript</li>
+                    <li>PHP</li>
+                    <li>MySQL</li>
                 </ul>
             </div>
             <div class="skill-category">
@@ -847,144 +1154,70 @@
                 </ul>
             </div>
             <div class="skill-category">
-                <h3>Core Competencies</h3>
+                <h3>AI & Machine Learning</h3>
                 <ul class="skill-list">
-                    <li>Problem Solving</li>
-                    <li>Critical Thinking</li>
-                    <li>Leadership</li>
-                    <li>Planning & Organization</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h3>Professional Skills</h3>
-                <ul class="skill-list">
-                    <li>Communication</li>
-                    <li>Time Management</li>
-                    <li>Work Under Pressure</li>
-                    <li>Team Collaboration</li>
-                </ul>
-            </div>
-            <div class="skill-category">
-                <h3>Languages</h3>
-                <ul class="skill-list">
-                    <li>Bangla (Fluent)</li>
-                    <li>English (Excellent)</li>
+                    <li>Machine Learning (ML)</li>
+                    <li>Deep Learning (DL)</li>
+                    <li>Transfer Learning (TL)</li>
+                    <li>Artificial Intelligence (AI)</li>
                 </ul>
             </div>
             <div class="skill-category">
                 <h3>Specialized Areas</h3>
                 <ul class="skill-list">
                     <li>IoT Development</li>
-                    <li>Android Apps</li>
+                    <li>Embedded Systems</li>
+                    <li>Android Development</li>
                     <li>Digital Security</li>
-                    <li>SOC Analysis</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Professional Competencies</h3>
+                <ul class="skill-list">
+                    <li>Teaching & Mentoring</li>
+                    <li>Research & Documentation</li>
+                    <li>Problem Solving</li>
+                    <li>Critical Thinking</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Soft Skills</h3>
+                <ul class="skill-list">
+                    <li>Communication</li>
+                    <li>Public Speaking</li>
+                    <li>Leadership</li>
+                    <li>Time Management</li>
+                    <li>Team Collaboration</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Languages</h3>
+                <ul class="skill-list">
+                    <li>Bangla (Native)</li>
+                    <li>English (Excellent)</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience">
-        <h2 class="section-title">Experience</h2>
-        <div class="experience-grid">
-            <div class="experience-card">
-                <h3>Private Tutor</h3>
-                <div class="company">Self-employed</div>
-                <div class="period">January 2018 - Present | Gazipur</div>
-                <ul>
-                    <li>Taught 50+ students from classes 6-12, focusing on Computer Science, ICT, and Mathematics</li>
-                    <li>Prepared students for board exams and ICT Olympiads, achieving a 90%+ success rate</li>
-                    <li>Designed lesson plans, created mock tests, and incorporated real-world programming examples</li>
-                    <li>Simplified complex technical concepts through project-based learning</li>
-                </ul>
+    <!-- Training Section -->
+    <section id="training" style="background: var(--light);">
+        <h2 class="section-title">Training & Workshops</h2>
+        <div class="achievements-grid">
+            <div class="achievement-card" style="border-top: 4px solid #10b981;">
+                <h3>60-Hour ITEE Training</h3>
+                <p><strong>Bangladesh Computer Council</strong></p>
+                <p>Comprehensive training in IT engineering and system administration.</p>
             </div>
-            <div class="experience-card">
-                <h3>SOC Analyst Intern</h3>
-                <div class="company">Byte Care Limited</div>
-                <div class="period">March 2025 - April 2025</div>
-                <ul>
-                    <li>Completed a 4-week intensive internship analyzing security events</li>
-                    <li>Prepared detailed incident reports and security assessments</li>
-                    <li>Gained hands-on experience in digital forensics and threat monitoring</li>
-                    <li>Worked under the supervision of Samiul Islam Sami, Coordinator (Training & Development)</li>
-                </ul>
+            <div class="achievement-card" style="border-top: 4px solid #10b981;">
+                <h3>3-Day Workshop on IoT</h3>
+                <p><strong>DUET Robotics Club</strong></p>
+                <p>Hands-on workshop covering IoT fundamentals and practical implementations.</p>
             </div>
-            <div class="experience-card">
-                <h3>Android Development Intern</h3>
-                <div class="company">BDtask Academy</div>
-                <div class="period">January 2020 - March 2020</div>
-                <ul>
-                    <li>Completed a 12-week internship developing Android apps with Java and XML</li>
-                    <li>Built and tested modules for e-learning and productivity applications</li>
-                    <li>Collaborated with development team on app design and functionality</li>
-                    <li>Gained practical experience in mobile app development lifecycle</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2 class="section-title">Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-header">
-                    <h3>Brain Tumor Classification</h3>
-                </div>
-                <div class="project-body">
-                    <p><strong>Duration:</strong> July 2025 - August 2025</p>
-                    <p>Developed deep learning models for medical image classification, focusing on automated brain tumor detection and classification.</p>
-                    <div class="project-tags">
-                        <span class="tag">Deep Learning</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">Medical AI</span>
-                        <span class="tag">Research</span>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-header">
-                    <h3>Automated War Vehicle</h3>
-                </div>
-                <div class="project-body">
-                    <p><strong>Duration:</strong> August 2023 - September 2023</p>
-                    <p>Designed and built an autonomous vehicle prototype with obstacle detection and navigation capabilities using microcontrollers and sensors.</p>
-                    <div class="project-tags">
-                        <span class="tag">Robotics</span>
-                        <span class="tag">IoT</span>
-                        <span class="tag">Arduino</span>
-                        <span class="tag">Automation</span>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-header">
-                    <h3>IoT-Based Smart Home</h3>
-                </div>
-                <div class="project-body">
-                    <p><strong>Developed during:</strong> DUET IoT Workshop</p>
-                    <p>Created a smart home prototype integrating sensors and microcontrollers for home automation, featuring remote control and monitoring capabilities.</p>
-                    <div class="project-tags">
-                        <span class="tag">IoT</span>
-                        <span class="tag">Smart Home</span>
-                        <span class="tag">Sensors</span>
-                        <span class="tag">Automation</span>
-                    </div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-header">
-                    <h3>Android Attendance Tracker</h3>
-                </div>
-                <div class="project-body">
-                    <p>Designed and implemented an Android application to automate class attendance tracking with user-friendly interface and data management.</p>
-                    <div class="project-tags">
-                        <span class="tag">Android</span>
-                        <span class="tag">Java</span>
-                        <span class="tag">Mobile App</span>
-                        <span class="tag">Education</span>
-                    </div>
-                </div>
+            <div class="achievement-card" style="border-top: 4px solid #10b981;">
+                <h3>40-Hour Digital Security Essentials</h3>
+                <p><strong>a2i Bangladesh</strong></p>
+                <p>Training on cybersecurity fundamentals and digital forensics.</p>
             </div>
         </div>
     </section>
@@ -1005,7 +1238,7 @@
                     <div class="contact-icon">📱</div>
                     <div class="contact-details">
                         <h4>Phone</h4>
-                        <a href="tel:01572910520">01572-910520</a>
+                        <a href="tel:+8801572910520">+880 1572-910520</a>
                     </div>
                 </div>
                 <div class="contact-item">
@@ -1013,6 +1246,14 @@
                     <div class="contact-details">
                         <h4>Location</h4>
                         <p>Gazipur, Bangladesh</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🔗</div>
+                    <div class="contact-details">
+                        <h4>Connect</h4>
+                        <a href="https://github.com/Arafat-Khan-47" target="_blank">GitHub</a> | 
+                        <a href="https://www.linkedin.com/in/your-profile" target="_blank">LinkedIn</a>
                     </div>
                 </div>
             </div>
@@ -1039,9 +1280,8 @@
     <!-- Footer -->
     <footer>
         <div class="social-links">
-            <a href="#" title="Facebook">f</a>
-            <a href="#" title="LinkedIn">in</a>
-            <a href="#" title="GitHub">gh</a>
+            <a href="https://github.com/Arafat-Khan-47" title="GitHub" target="_blank">GH</a>
+            <a href="https://www.linkedin.com/in/your-profile" title="LinkedIn" target="_blank">in</a>
             <a href="mailto:arafatkhan.7232@gmail.com" title="Email">@</a>
         </div>
         <p>&copy; 2025 Md. Arafat. All rights reserved.</p>
@@ -1125,7 +1365,7 @@
         });
 
         // Observe cards and timeline items
-        document.querySelectorAll('.skill-category, .experience-card, .project-card, .timeline-item').forEach(item => {
+        document.querySelectorAll('.skill-category, .experience-card, .project-card, .timeline-item, .achievement-card').forEach(item => {
             item.style.opacity = '0';
             item.style.transform = 'translateY(20px)';
             item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
